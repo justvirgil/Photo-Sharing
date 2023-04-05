@@ -1,0 +1,53 @@
+@import models.domain._ 
+@(signUpForm: Form[UserAccount])(implicit messages: Messages)
+
+<html>
+  <head>
+    <title>Photo Sharing</title>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+  </head>
+<body>
+</br>
+</br>
+</br>
+</br>
+
+  <tr>
+  <div class="container">
+    <div class="login-form">
+      <form action="@routes.SignUpController.signinUser" method="POST">
+        </br>
+        </br>
+        <h3>Login</h3> 
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" required>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" required>
+          <button class="btn-primary" type="submit">Login</button>
+      </form>
+    </div>
+    <div class="signup-form">
+      <form action="@routes.SignUpController.signUpUser" method="POST">
+        <h3>Sign Up</h3> 
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" required>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" required>
+          <label for="first_name">First Name</label>
+          <input type="text" name="first_name" id="first_name" required>
+          <label for="last_name">Last Name</label>
+          <input type="text" name="last_name" id="last_name" required>
+         
+          <button class="btn-primary" type="submit">Sign Up</button>
+      </form>
+  </div>
+
+  <div class="container">
+    
+    </div>
+  </div>
+  </tr>
+</body>
+
+</html>
