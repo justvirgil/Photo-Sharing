@@ -1,0 +1,112 @@
+2023-04-04 13:11:55 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "play_evolutions" not found; SQL statement:
+select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%' [42102-192]
+2023-04-04 13:18:56 jdbc[45]: exception
+org.h2.jdbc.JdbcSQLException: Value too long for column """password"" VARCHAR(20) NOT NULL": "'9gpDNT4pjmVhgiFWgs4YIUQxvv5nblrJVl7BRtdpMatXY04U/mzZ1GqtK0xqOPOx' (64)"; SQL statement:
+insert into "user_account" ("username","password","first_name","last_name","created_at")  values (?,?,?,?,?) [22001-192]
+2023-04-04 13:19:09 jdbc[45]: exception
+org.h2.jdbc.JdbcSQLException: Value too long for column """password"" VARCHAR(20) NOT NULL": "'f4N2QQ6XoTV6QGDArm4okRdEQ66y17wRd5Wf24oyRHFgx5cutcTH3fShwAcTC8lb' (64)"; SQL statement:
+insert into "user_account" ("username","password","first_name","last_name","created_at")  values (?,?,?,?,?) [22001-192]
+2023-04-04 13:20:07 jdbc[66]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "drop table ""user_account"" ""play_evolutions""[*]"; SQL statement:
+drop table "user_account" "play_evolutions" [42000-192]
+2023-04-04 13:21:02 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "play_evolutions" not found; SQL statement:
+select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%' [42102-192]
+2023-04-05 11:01:42 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE ""play_evolutions"" ""user_account""[*] "; SQL statement:
+drop table "play_evolutions" "user_account" [42000-192]
+2023-04-05 11:10:40 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "play_evolutions" not found; SQL statement:
+select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%' [42102-192]
+2023-04-05 11:16:16 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "PLAY_EVOLUTIONS" not found; SQL statement:
+select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%' [42102-192]
+2023-04-05 11:16:17 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "user_account" already exists; SQL statement:
+CREATE TABLE "user_account" (
+"user_id" SERIAL PRIMARY KEY,
+"username" VARCHAR(20) NOT NULL,
+"password" VARCHAR(100) NOT NULL,
+"first_name" VARCHAR(20) NOT NULL,
+"last_name" VARCHAR(20) NOT NULL,
+"nickname" VARCHAR(20) NOT NULL,
+"avatar" VARCHAR(20) NOT NULL
+) [42101-192]
+2023-04-05 11:17:06 jdbc[26]: exception
+org.h2.jdbc.JdbcSQLException: Table "PLAY_EVOLUTIONS" not found; SQL statement:
+select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%' [42102-192]
+2023-04-05 11:17:06 jdbc[25]: exception
+org.h2.jdbc.JdbcSQLException: Table "user_account" already exists; SQL statement:
+CREATE TABLE "user_account" (
+"user_id" SERIAL PRIMARY KEY,
+"username" VARCHAR(20) NOT NULL,
+"password" VARCHAR(100) NOT NULL,
+"first_name" VARCHAR(20) NOT NULL,
+"last_name" VARCHAR(20) NOT NULL,
+"nickname" VARCHAR(20) NOT NULL,
+"avatar" VARCHAR(20) NOT NULL
+) [42101-192]
+2023-04-05 11:52:32 jdbc[246]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-192]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:187)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:129)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:102)
+	at org.h2.Driver.connect(Driver.java:72)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:119)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467)
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:706)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:692)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-192]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 18 more
+2023-04-05 11:52:32 jdbc[246]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-192]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:187)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:129)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:102)
+	at org.h2.Driver.connect(Driver.java:72)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:119)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467)
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:706)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:692)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-192]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 18 more
+2023-04-05 11:52:32 jdbc[247]: exception
+org.h2.jdbc.JdbcSQLException: Table "PLAY_EVOLUTIONS" not found; SQL statement:
+select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%' [42102-192]
+2023-04-05 11:52:32 jdbc[246]: exception
+org.h2.jdbc.JdbcSQLException: Table "user_account" already exists; SQL statement:
+CREATE TABLE "user_account" (
+"user_id" SERIAL PRIMARY KEY,
+"username" VARCHAR(20) NOT NULL,
+"password" VARCHAR(100) NOT NULL,
+"first_name" VARCHAR(20) NOT NULL,
+"last_name" VARCHAR(20) NOT NULL,
+"nickname" VARCHAR(20) NOT NULL,
+"avatar" VARCHAR(20) NOT NULL
+) [42101-192]
+2023-04-05 12:48:37 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "play_evolutions" not found; SQL statement:
+select id, hash, apply_script, revert_script, state, last_problem from play_evolutions where state like 'applying_%' [42102-192]
